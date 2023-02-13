@@ -1,19 +1,43 @@
 <template>
-    <v-container class="bg-surface-variant">
-    <v-row no-gutters>
-      <v-col
-        v-for="n in ['A','B', 'C']"
-        :key="n"
-        cols="4"
-      >
-          <span>Register {{n}}</span>
-         
+  <v-container class="">
+    <v-row>
+      <v-col>
+        <mix-register name="A" bytes="5"></mix-register>
+      </v-col>
+      <v-col>
+        <mix-register name="X" bytes="5"></mix-register>
       </v-col>
     </v-row>
- </v-container>
+    <v-row>
+      <v-col cols="3">
+        <div><mix-register name="I1" bytes="2"></mix-register></div>
+        <div><mix-register name="I2" bytes="2"></mix-register></div>
+        <div><mix-register name="I3" bytes="2"></mix-register></div>
+        <div><mix-register name="I4" bytes="2"></mix-register></div>
+        <div><mix-register name="I5" bytes="2"></mix-register></div>
+      </v-col>
+      <v-col cols="9">
+        <div class="display-container">
+          <v-card class="display">Display</v-card>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
+  import MixRegister from './MixRegister.vue'
+</script>
+<script>
+  export default {
+    data: () => ({
+      alignments: [
+        'start',
+        'center',
+        'end',
+      ],
+    }),
+  }
 </script>
 
 <style scoped>
@@ -21,8 +45,41 @@
     border: 1px solid white;
   }
 
-  .register-box {
-    width: 50px;
-    height: 50px;
+  td {
+    border: solid 1px black;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .display-container {
+    position: absolute;
+  }
+
+  .display {
+    text-align: center;
+    position: relateive;
+    height: 100%;
+    width: 100%;
   }
 </style>

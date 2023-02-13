@@ -1,10 +1,11 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <v-app full-height="true">
+    <RouterView />
+  </v-app>
 </template>
 
 <style scoped>
