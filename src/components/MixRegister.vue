@@ -1,4 +1,5 @@
 <template>
+  <div>
     <h3>Register {{ name }}</h3>
     <table>
       <tr>
@@ -6,6 +7,7 @@
         <td v-for="k in bytes" :key="k">{{name}}{{k}}</td>
       </tr>
     </table>
+  </div>
 </template>
   
 <script setup>
@@ -39,13 +41,10 @@
     text-align: center;
     width: 40px;
     height: 40px;
+    border-radius: 5px;
   }
 
   h3 {
     text-align: center;
-  }
-  .inline {
-    display: inline-block;
-    margin: 10px;
   }
 </style>

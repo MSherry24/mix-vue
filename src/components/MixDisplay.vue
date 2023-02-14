@@ -17,6 +17,18 @@
         <div><mix-register name="I5" bytes="2"></mix-register></div>
       </v-col>
       <v-col cols="9">
+        <div>
+          <v-container>
+            <v-row>
+              <v-col>
+                <overflow-toggle></overflow-toggle>
+              </v-col>
+              <v-col>
+                <comparison-toggle></comparison-toggle>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
         <div class="display-container">
           <v-card class="display">Display</v-card>
         </div>
@@ -26,7 +38,9 @@
 </template>
 
 <script setup>
-  import MixRegister from './MixRegister.vue'
+  import MixRegister from './MixRegister.vue';
+  import OverflowToggle from './OverflowToggle.vue';
+  import ComparisonToggle from './ComparisonToggle.vue';
 </script>
 <script>
   export default {
