@@ -1,30 +1,24 @@
 <template>
     <div class="display-container">
-      <!-- <v-card class="display">
-        <div v-for="n in 4000" :key="n">
-          <v-container>
-            <v-row>
-              <v-col>
-                {{ memNum(n) }}
-              </v-col>
-              <v-col>
-                  <MemoryBlock bytes="5"></MemoryBlock>
-              </v-col>
-            </v-row>
-          </v-container>
-        </div>
-      </v-card> -->
       <v-card class="display">
-        <div v-for="n in 4000" :key="n">
-          <span class="memory-slot memory-span">{{ memNum(n - 1) }}</span>
-          <span class="memory-span"><MemoryBlock bytes="5"></MemoryBlock></span>
-        </div>
+        <table class="mem-table">
+          <tbody>
+            <tr v-for="n in 4000" :key="n">
+              <td>{{ memNum(n-1) }}</td>
+              <td class="mem-block">+/-</td>
+              <td class="mem-block"></td>
+              <td class="mem-block"></td>
+              <td class="mem-block"></td>
+              <td class="mem-block"></td>
+              <td class="mem-block"></td>
+            </tr>
+          </tbody>
+        </table>
       </v-card>
     </div>
   </template>
   
   <script setup>
-    import MemoryBlock from './MemoryBlock.vue';
     const memNum = (n) => {
       let stringN = n.toString();
       while (stringN.length < 4) {
@@ -51,5 +45,17 @@
     align-content: center;
     flex-direction: column;
     text-align: center;
+   }
+
+   .mem-block {
+    border: solid 1px black;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+   }
+
+   .mem-table {
+    margin: auto;
    }
   </style>
