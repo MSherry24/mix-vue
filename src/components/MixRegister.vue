@@ -1,34 +1,22 @@
 <template>
   <div>
     <h3>Register {{ name }}</h3>
-    <table>
-      <tr>
-        <td>+/-</td>
-        <td v-for="k in bytes" :key="k">{{name}}{{k}}</td>
-      </tr>
-    </table>
+    <memory-block :name="name" :bytes="bytes"></memory-block>
   </div>
 </template>
   
 <script setup>
-  import { computed } from "vue"
-  const props = defineProps({
+  import MemoryBlock from "./MemoryBlock.vue";
+  defineProps({
     name: {
       type: String,
-      required: true
+      required: false
     },
     bytes: {
-      type: Number,
+      type: String,
       required: true
     }
   });
-
-  const bytes = computed({
-    get() {
-      return parseInt(props.bytes);
-    }
-  })
-
 </script>
   
 <style scoped>

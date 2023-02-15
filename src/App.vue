@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <v-app full-height="true">
+  <v-app :full-height=true>
     <RouterView />
   </v-app>
 </template>

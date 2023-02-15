@@ -30,7 +30,7 @@
           </v-container>
         </div>
         <div class="display-container">
-          <v-card class="display">Display</v-card>
+          <memory-display></memory-display>
         </div>
       </v-col>
     </v-row>
@@ -41,6 +41,7 @@
   import MixRegister from './MixRegister.vue';
   import OverflowToggle from './OverflowToggle.vue';
   import ComparisonToggle from './ComparisonToggle.vue';
+  import MemoryDisplay from './MemoryDisplay.vue';
 </script>
 <script>
   export default {
